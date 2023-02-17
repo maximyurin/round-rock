@@ -1,5 +1,31 @@
+@font-face {
+  font-family: "SF Bold Display", sans-serif;
+  src: url("../fonts/SF/SFProDisplay-Black.ttf");
+}
+
+@font-face {
+  font-family: "SF Display", sans-serif;
+  src: url("../fonts/SF/SFProDisplay-Light.ttf");
+}
+
+@font-face {
+  font-family: "SF Display Regular", sans-serif;
+  src: url("../fonts/SF/SFProDisplay-Regular.ttf");
+}
+
+
+/* Fonts */
+$primary-text-header-bold: "SF Bold Display", sans-serif;
+$primary-text-sf-light: "SF Display", sans-serif;
+$primary-text-sf-regular: "SF Display Regular", sans-serif;
+$primary-text-light: Poppins, sans-serif;
+
 /* Colors */
 $primary-text-color: #4F4F4F;
 $primary-text-red-color: #EB5757;
 $button-yellow-background-color: #F2C94C;
 $button-gradient-background: linear-gradient(90deg, rgba(235,117,152,1) 0%, rgba(255,146,111,1) 100%);
+$primary-text-grey-color: #333;
+
+/* Other variables */
+$index: calc(1vw + 1vh);
