@@ -2,6 +2,7 @@
 @import 'mixins';
 
 /* Reset css */
+
 * {
   margin: 0;
   padding: 0;
@@ -12,6 +13,8 @@ body {
   font-size: 0.875rem;
   font-family: $primary-text-light;;
 }
+
+/* Basic styles */
 
 h1 {
   font-size: 7.188rem;
@@ -123,16 +126,17 @@ input[type=email]::placeholder, input[type=text]::placeholder {
   border: 3px solid #fff;
   border-radius: 3.813rem;
   background-color: $primary-text-red-color;
-  padding: 0.68rem 1.5rem;
+  padding: 0.68rem 1.2rem;
   cursor: pointer;
   color: #fff;
   text-transform: uppercase;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   letter-spacing: 1px;
   font-family: $primary-text-sf-regular;
   width: 10.5rem;
   transition: all .4s ease;
-  font-weight: 700;
+  font-weight: 600;
+  line-height: 1.4rem;
   &:hover {
     color: $primary-text-red-color;
     background: #fff;
@@ -142,7 +146,6 @@ input[type=email]::placeholder, input[type=text]::placeholder {
 
 /* Main Page styles */
 
-/* Header */
 .main-grid-container {
   display: grid;
   grid-template-columns: 1fr;
@@ -228,7 +231,7 @@ input[type=email]::placeholder, input[type=text]::placeholder {
       background-image: url(../img/about-bg.png);
       background-repeat: no-repeat;
       background-size: cover;
-      background-position: center center;
+      background-position: center -1rem;
       &__grid-container {
         display: grid;
         grid-template-columns: 20rem 20rem 20rem;
@@ -312,12 +315,13 @@ input[type=email]::placeholder, input[type=text]::placeholder {
           opacity: 0;
           transition: 600ms ease all;
           text-shadow: 0 2px 2px rgba(0,0,0,0.65);
+          font-size: 0.95rem;
         }
         &:hover {
           position: relative;
           transition: 300ms ease all;
           &::after {
-            opacity: .6;
+            opacity: .7;
             transition: all 1200ms ease;
             transform: scale(90%);
           }
@@ -408,27 +412,85 @@ input[type=email]::placeholder, input[type=text]::placeholder {
 }
 
 /* Media queries */
-/*  Parallax */
-@media screen and (min-width: 100rem) {
+
+/* Parallax */
+
+@media screen and (min-width: 120rem) {
   .main-grid-container {
-    transform: translate3d(0, calc(var(--scrollTop) / 4), 0);
+    transform: translate3d(0, calc($scrollY / 4), 0);
     .main-header {
-      background-attachment: fixed;S
-      transform: translate3d(0, calc(var(--scrollTop) / 14), 0);
+      transform: translate3d(0, calc($scrollY / 14), 0);
       &__logo {
-        transform: translate3d(0, calc(var(--scrollTop) / 4), 0);
+        transform: translate3d(0, calc($scrollY / 4), 0);
       }
       &__content {
-        transform: translate3d(0, calc(var(--scrollTop) / 5), 0);
+        transform: translate3d(0, calc($scrollY / 6), 0);
       }
     }
     .main-content {
-      transform: translate3d(0, calc(var(--scrollTop) / 14), 0);
+      transform: translate3d(0, calc($scrollY / 14), 0);
+      .electric-services {
+        background-position: center calc($scrollY / 8);
+      }
+      .electric-services, .about-us, .gallery   {
+        transform: translate3d(0, calc($scrollY / 12), 0);
+      }
     }
     .main-footer {
-      transform: translate3d(0, calc(var(--scrollTop) / 14), 0);
+      transform: translate3d(0, calc($scrollY / 6.5), 0);
     }
   }
 }
 
+/* Mobile version */
 
+@media screen and (max-width: 43.75rem) {
+  .container {
+    padding: 0 1.5rem;
+  }
+  .main-grid-container {
+    .main-header {
+      min-height: 30rem;
+      padding-top: 2rem;
+      &__logo {
+        display: flex;
+        justify-content: flex-end;
+        img {
+          display: block;
+          width: 20.25rem;
+          height: auto;
+          margin: 0 2rem 0 0;
+        }
+      }
+      &__content {
+        margin: -1.3rem auto 0;
+      }
+    }
+    .main-content {
+      .electric-services {
+        header {
+          text-align: center;
+        }
+        &__grid-container {
+          grid-template-columns: 60%;
+          grid-template-rows: 40rem 40rem 40rem 40rem 40rem 40rem;
+          gap: 3rem;
+        }
+        &__service-title {
+          margin-top: 1.25rem;
+        }
+        &__service-link {
+          display: inline-block;
+          line-height: 1.5rem;
+          margin-top: 1.375rem;
+        }
+        &__card-item {
+          border-radius: 4.875rem;
+          img {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}

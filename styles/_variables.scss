@@ -13,7 +13,6 @@
   src: url("../fonts/SF/SFProDisplay-Regular.ttf");
 }
 
-
 /* Fonts */
 $primary-text-header-bold: "SF Bold Display", sans-serif;
 $primary-text-sf-light: "SF Display", sans-serif;
@@ -29,4 +28,4 @@ $primary-text-grey-color: #333;
 $about-us-section-numbers-colors: #D89595;
 
 /* Other variables */
-$index: calc(1vw + 1vh);
+$scrollY: var(--scrollTop);

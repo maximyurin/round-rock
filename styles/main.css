@@ -26,6 +26,7 @@ body {
   font-family: Poppins, sans-serif;
 }
 
+/* Basic styles */
 h1 {
   font-size: 7.188rem;
   line-height: 6rem;
@@ -136,16 +137,17 @@ input[type=email]::placeholder, input[type=text]::placeholder {
   border: 3px solid #fff;
   border-radius: 3.813rem;
   background-color: #EB5757;
-  padding: 0.68rem 1.5rem;
+  padding: 0.68rem 1.2rem;
   cursor: pointer;
   color: #fff;
   text-transform: uppercase;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   letter-spacing: 1px;
   font-family: "SF Display Regular", sans-serif;
   width: 10.5rem;
   transition: all 0.4s ease;
-  font-weight: 700;
+  font-weight: 600;
+  line-height: 1.4rem;
 }
 .button-contact-form:hover {
   color: #EB5757;
@@ -154,7 +156,6 @@ input[type=email]::placeholder, input[type=text]::placeholder {
 }
 
 /* Main Page styles */
-/* Header */
 .main-grid-container {
   display: grid;
   grid-template-columns: 1fr;
@@ -240,7 +241,7 @@ input[type=email]::placeholder, input[type=text]::placeholder {
   background-image: url(../img/about-bg.png);
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center center;
+  background-position: center -1rem;
 }
 .main-grid-container .main-content .about-us__grid-container {
   display: grid;
@@ -321,13 +322,14 @@ input[type=email]::placeholder, input[type=text]::placeholder {
   opacity: 0;
   transition: 600ms ease all;
   text-shadow: 0 2px 2px rgba(0, 0, 0, 0.65);
+  font-size: 0.95rem;
 }
 .main-grid-container .main-content .gallery__img-link:hover {
   position: relative;
   transition: 300ms ease all;
 }
 .main-grid-container .main-content .gallery__img-link:hover::after {
-  opacity: 0.6;
+  opacity: 0.7;
   transition: all 1200ms ease;
   transform: scale(90%);
 }
@@ -405,8 +407,8 @@ input[type=email]::placeholder, input[type=text]::placeholder {
 }
 
 /* Media queries */
-/*  Parallax */
-@media screen and (min-width: 100rem) {
+/* Parallax */
+@media screen and (min-width: 120rem) {
   .main-grid-container {
     transform: translate3d(0, calc(var(--scrollTop) / 4), 0);
   }
@@ -417,13 +419,64 @@ input[type=email]::placeholder, input[type=text]::placeholder {
     transform: translate3d(0, calc(var(--scrollTop) / 4), 0);
   }
   .main-grid-container .main-header__content {
-    transform: translate3d(0, calc(var(--scrollTop) / 5), 0);
+    transform: translate3d(0, calc(var(--scrollTop) / 6), 0);
   }
   .main-grid-container .main-content {
     transform: translate3d(0, calc(var(--scrollTop) / 14), 0);
   }
+  .main-grid-container .main-content .electric-services {
+    background-position: center calc(var(--scrollTop) / 8);
+  }
+  .main-grid-container .main-content .electric-services, .main-grid-container .main-content .about-us, .main-grid-container .main-content .gallery {
+    transform: translate3d(0, calc(var(--scrollTop) / 12), 0);
+  }
   .main-grid-container .main-footer {
-    transform: translate3d(0, calc(var(--scrollTop) / 14), 0);
+    transform: translate3d(0, calc(var(--scrollTop) / 6.5), 0);
+  }
+}
+/* Mobile version */
+@media screen and (max-width: 43.75rem) {
+  .container {
+    padding: 0 1.5rem;
+  }
+  .main-grid-container .main-header {
+    min-height: 30rem;
+    padding-top: 2rem;
+  }
+  .main-grid-container .main-header__logo {
+    display: flex;
+    justify-content: flex-end;
+  }
+  .main-grid-container .main-header__logo img {
+    display: block;
+    width: 20.25rem;
+    height: auto;
+    margin: 0 2rem 0 0;
+  }
+  .main-grid-container .main-header__content {
+    margin: -1.3rem auto 0;
+  }
+  .main-grid-container .main-content .electric-services header {
+    text-align: center;
+  }
+  .main-grid-container .main-content .electric-services__grid-container {
+    grid-template-columns: 60%;
+    grid-template-rows: 40rem 40rem 40rem 40rem 40rem 40rem;
+    gap: 3rem;
+  }
+  .main-grid-container .main-content .electric-services__service-title {
+    margin-top: 1.25rem;
+  }
+  .main-grid-container .main-content .electric-services__service-link {
+    display: inline-block;
+    line-height: 1.5rem;
+    margin-top: 1.375rem;
+  }
+  .main-grid-container .main-content .electric-services__card-item {
+    border-radius: 4.875rem;
+  }
+  .main-grid-container .main-content .electric-services__card-item img {
+    width: 100%;
   }
 }
 
