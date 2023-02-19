@@ -415,7 +415,7 @@ input[type=email]::placeholder, input[type=text]::placeholder {
 
 /* Parallax */
 
-@media screen and (min-width: 120rem) {
+@media screen and (min-width: 100rem) {
   .main-grid-container {
     transform: translate3d(0, calc($scrollY / 4), 0);
     .main-header {
@@ -442,11 +442,22 @@ input[type=email]::placeholder, input[type=text]::placeholder {
   }
 }
 
+@media screen and (max-width: 81.25rem) {
+  .container {
+    padding: 0 2rem;
+  }
+  .main-grid-container {
+    .main-header {
+      min-height: 50rem;
+    }
+  }
+}
+
 /* Mobile version */
 
 @media screen and (max-width: 43.75rem) {
   .container {
-    padding: 0 1.5rem;
+    padding: 0 2rem;
   }
   .main-grid-container {
     .main-header {
@@ -463,18 +474,37 @@ input[type=email]::placeholder, input[type=text]::placeholder {
         }
       }
       &__content {
-        margin: -1.3rem auto 0;
+        margin: 1rem auto 1rem auto;
+        width: 18rem;
+        h1 {
+          font-size: 5.188rem;
+        }
+      }
+      &__text {
+        margin: 1rem 0 1rem 0;
+      }
+      &__logo {
+        img {
+          width: 11rem;
+        }
       }
     }
     .main-content {
       .electric-services {
+        padding-top: 2.125rem;
+        background-position: center 13rem;
         header {
           text-align: center;
+          margin-bottom: 5.875rem;
+          h2 {
+            font-size: 3.5rem;
+          }
         }
         &__grid-container {
-          grid-template-columns: 60%;
-          grid-template-rows: 40rem 40rem 40rem 40rem 40rem 40rem;
+          grid-template-columns: 38rem;
+          grid-template-rows: repeat(6, 38rem);
           gap: 3rem;
+          padding-bottom: 2rem
         }
         &__service-title {
           margin-top: 1.25rem;
@@ -490,6 +520,72 @@ input[type=email]::placeholder, input[type=text]::placeholder {
             width: 100%;
           }
         }
+      }
+      .about-us {
+        padding-top: 1.125rem;
+        header {
+          text-align: center;
+          h2 {
+            font-size: 3.5rem;
+          }
+        }
+        &__grid-container {
+          grid-template-columns: 100%;
+          grid-template-rows: repeat(6, 5rem);
+          gap: 5.5rem;
+          margin-top: 1.125rem
+        }
+        &__buttons {
+          text-align: center;
+          padding: 0;
+          margin-top: 7rem;
+        }
+        &__text {
+          font-size: 1.1rem;
+        }
+      }
+      .gallery {
+        header {
+          text-align: center;
+          margin-bottom: 2rem;
+          h2 {
+            font-size: 3.5rem;
+          }
+        }
+        &__grid-container {
+          grid-template-columns: 37rem;
+          grid-template-rows: repeat(8, 37rem);
+          gap: 2rem;
+          justify-content: center;
+        }
+        &__img-link {
+          img {
+            width: 100%;
+          }
+        }
+      }
+    }
+    .main-footer {
+      grid-template-areas: "head" "info" "form";
+      gap: 2rem 0;
+      padding: 1rem 4rem 2rem 4rem;
+      justify-content: center;
+      justify-items: center;
+      header {
+        text-align: center;
+        h2 {
+          font-size: 3.5rem;
+        }
+      }
+      &__contact-form {
+        margin-top: 1rem;
+      }
+      &__contact-info {
+        margin-left: 0;
+        padding-top: 0;
+      }
+      &__contact-form-button {
+        margin-top: 1rem;
       }
     }
   }

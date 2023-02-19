@@ -408,7 +408,7 @@ input[type=email]::placeholder, input[type=text]::placeholder {
 
 /* Media queries */
 /* Parallax */
-@media screen and (min-width: 120rem) {
+@media screen and (min-width: 100rem) {
   .main-grid-container {
     transform: translate3d(0, calc(var(--scrollTop) / 4), 0);
   }
@@ -434,10 +434,18 @@ input[type=email]::placeholder, input[type=text]::placeholder {
     transform: translate3d(0, calc(var(--scrollTop) / 6.5), 0);
   }
 }
+@media screen and (max-width: 81.25rem) {
+  .container {
+    padding: 0 2rem;
+  }
+  .main-grid-container .main-header {
+    min-height: 50rem;
+  }
+}
 /* Mobile version */
 @media screen and (max-width: 43.75rem) {
   .container {
-    padding: 0 1.5rem;
+    padding: 0 2rem;
   }
   .main-grid-container .main-header {
     min-height: 30rem;
@@ -454,15 +462,34 @@ input[type=email]::placeholder, input[type=text]::placeholder {
     margin: 0 2rem 0 0;
   }
   .main-grid-container .main-header__content {
-    margin: -1.3rem auto 0;
+    margin: 1rem auto 1rem auto;
+    width: 18rem;
+  }
+  .main-grid-container .main-header__content h1 {
+    font-size: 5.188rem;
+  }
+  .main-grid-container .main-header__text {
+    margin: 1rem 0 1rem 0;
+  }
+  .main-grid-container .main-header__logo img {
+    width: 11rem;
+  }
+  .main-grid-container .main-content .electric-services {
+    padding-top: 2.125rem;
+    background-position: center 13rem;
   }
   .main-grid-container .main-content .electric-services header {
     text-align: center;
+    margin-bottom: 5.875rem;
+  }
+  .main-grid-container .main-content .electric-services header h2 {
+    font-size: 3.5rem;
   }
   .main-grid-container .main-content .electric-services__grid-container {
-    grid-template-columns: 60%;
-    grid-template-rows: 40rem 40rem 40rem 40rem 40rem 40rem;
+    grid-template-columns: 38rem;
+    grid-template-rows: repeat(6, 38rem);
     gap: 3rem;
+    padding-bottom: 2rem;
   }
   .main-grid-container .main-content .electric-services__service-title {
     margin-top: 1.25rem;
@@ -477,6 +504,68 @@ input[type=email]::placeholder, input[type=text]::placeholder {
   }
   .main-grid-container .main-content .electric-services__card-item img {
     width: 100%;
+  }
+  .main-grid-container .main-content .about-us {
+    padding-top: 1.125rem;
+  }
+  .main-grid-container .main-content .about-us header {
+    text-align: center;
+  }
+  .main-grid-container .main-content .about-us header h2 {
+    font-size: 3.5rem;
+  }
+  .main-grid-container .main-content .about-us__grid-container {
+    grid-template-columns: 100%;
+    grid-template-rows: repeat(6, 5rem);
+    gap: 5.5rem;
+    margin-top: 1.125rem;
+  }
+  .main-grid-container .main-content .about-us__buttons {
+    text-align: center;
+    padding: 0;
+    margin-top: 7rem;
+  }
+  .main-grid-container .main-content .about-us__text {
+    font-size: 1.1rem;
+  }
+  .main-grid-container .main-content .gallery header {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  .main-grid-container .main-content .gallery header h2 {
+    font-size: 3.5rem;
+  }
+  .main-grid-container .main-content .gallery__grid-container {
+    grid-template-columns: 37rem;
+    grid-template-rows: repeat(8, 37rem);
+    gap: 2rem;
+    justify-content: center;
+  }
+  .main-grid-container .main-content .gallery__img-link img {
+    width: 100%;
+  }
+  .main-grid-container .main-footer {
+    grid-template-areas: "head" "info" "form";
+    gap: 2rem 0;
+    padding: 1rem 4rem 2rem 4rem;
+    justify-content: center;
+    justify-items: center;
+  }
+  .main-grid-container .main-footer header {
+    text-align: center;
+  }
+  .main-grid-container .main-footer header h2 {
+    font-size: 3.5rem;
+  }
+  .main-grid-container .main-footer__contact-form {
+    margin-top: 1rem;
+  }
+  .main-grid-container .main-footer__contact-info {
+    margin-left: 0;
+    padding-top: 0;
+  }
+  .main-grid-container .main-footer__contact-form-button {
+    margin-top: 1rem;
   }
 }
 
