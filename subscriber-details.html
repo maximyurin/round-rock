@@ -13,35 +13,12 @@
   <script src="./js/main.js" defer></script>
   <title>Round Rock Electric Services</title>
 </head>
-<body class="new-describer">
+<body class="new-subscriber">
 <div class="subscriber">
   <h4>New subscriber information</h4>
   <h3>Name:  <span class="subscriber__name"></span></h3>
   <h3>Surname:  <span class="subscriber__surname"></span></h3>
   <h3>Email:  <span class="subscriber__email"></span></h3>
 </div>
-<script>
-
-  const subscriberName = document.getElementsByClassName('subscriber__name')[0].innerHTML = getUrlVariable('name')
-  const subscriberSurname = document.getElementsByClassName('subscriber__surname')[0].innerHTML = getUrlVariable('surname');
-  const subscriberEmail = document.getElementsByClassName('subscriber__email')[0].innerHTML = getUrlVariable('email').replace('%40', '@');
-
-  console.log(subscriberName)
-  console.log(subscriberSurname)
-  console.log(subscriberEmail)
-
-  function getUrlVariable(key) {
-    let query = String(document.location.href).split('?');
-    if (query[1]) {
-      let part = query[1].split('&');
-      for (let i = 0; i < part.length; i++) {
-        let data = part[i].split('=');
-        if (data[0] == key && data[1]) return data[1];
-      }
-    }
-    return '';
-  }
-
-</script>
 </body>
 </html>

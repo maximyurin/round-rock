@@ -77,7 +77,7 @@ input:focus, select:focus, textarea:focus {
 }
 
 input[type=email]::placeholder, input[type=text]::placeholder {
-  color: transparentize($primary-text-red-color, .4);
+  color: transparentize($primary-text-red-color, .6);
 }
 
 .container {
@@ -412,7 +412,8 @@ input[type=email]::placeholder, input[type=text]::placeholder {
 }
 
 /* Subscriber details page */
-.new-describer {
+
+.new-subscriber {
   background-image: url("../img/header-bg.png");
   background-size: cover;
   background-position: center center;
@@ -453,10 +454,9 @@ input[type=email]::placeholder, input[type=text]::placeholder {
   }
 }
 
-
 /* Media queries */
 
-/* Parallax */
+/* Parallax for screens with a resolution higher than 1920 */
 
 @media screen and (min-width: 100rem) {
   .main-grid-container {
