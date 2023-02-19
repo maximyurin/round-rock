@@ -450,7 +450,7 @@ input[type=email]::placeholder, input[type=text]::placeholder {
 
 /* Media queries */
 /* Parallax for screens with a resolution higher than 1920 */
-@media screen and (min-width: 100rem) {
+@media screen and (min-width: 120.063rem) {
   .main-grid-container {
     transform: translate3d(0, calc(var(--scrollTop) / 4), 0);
   }

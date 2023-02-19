@@ -9,20 +9,13 @@ window.addEventListener('scroll', () => {
  * @returns {string} <-- Function returns the value of the necessary variable.
  */
 const getVariableValueFromUrl = (key) => {
-    let query = String(document.location.href).split('?');
-    if (query[1]) {
-        let part = query[1].split('&');
-        for (let i = 0; i < part.length; i++) {
-            let data = part[i].split('=');
-            if (data[0] === key && data[1]) return data[1];
-        }
-    }
-    return '';
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(key) || '';
 }
 
-//Write the name of the new user
-document.getElementsByClassName('subscriber__name')[0].innerHTML = getVariableValueFromUrl('name').replaceAll('+', ' ');
-//Write the surname of the new user
-document.getElementsByClassName('subscriber__surname')[0].innerHTML = getVariableValueFromUrl('surname').replaceAll('+', ' ');
-//Write the email of the new user
-document.getElementsByClassName('subscriber__email')[0].innerHTML = getVariableValueFromUrl('email').replace('%40', '@');
+//Insert the name of the new user
+document.querySelector('.subscriber__name').innerHTML = getVariableValueFromUrl('name').replaceAll('+', ' ');
+//Insert the surname of the new user
+document.querySelector('.subscriber__surname').innerHTML = getVariableValueFromUrl('surname').replaceAll('+', ' ');
+//Insert the email of the new user
+document.querySelector('.subscriber__email').innerHTML = getVariableValueFromUrl('email').replace('%40', '@');
